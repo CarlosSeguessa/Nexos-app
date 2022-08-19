@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import logo from "../assets/img/logo.png";
 import Modal from "./Modal"
+import manos from "../assets/img/manos.jpg"
 const Header = () => {
     const [open, setOpen] = useState(false);
     const handleOpen = () => {
@@ -36,7 +37,7 @@ const Header = () => {
           ></i>
         </div>
       </header>
-      <div id="hamburguer-menu" className={`${open === true ? '' : 'hidden'}      absolute w-full z-10 sm:hidden`}>
+      <div id="hamburguer-menu" className={`${open === true ? '' : 'hidden'} absolute w-full z-10 sm:hidden`}>
         <div className=" h-60 bg-white shadow-xl rounded-b-2xl w-full">
           <ul className="w-full flex flex-col items-center justify-center">
             <li className="w-[120px] h-[40px] flex items-center justify-center font-bold my-2 sm:hover:underline">
@@ -62,6 +63,31 @@ const Header = () => {
           </div>
         </div>
       </div>
+      <div className="relative bg-black">
+      <img
+        src={manos}
+        alt="headerImage"
+        className="h-[27vh] sm:h-[57vh] sm:w-full object-fill opacity-60"
+      />
+      <div className="absolute bottom-0 top-0 text-white w-full h-full">
+        <div
+          className="flex flex-col items-center justify-center h-full w-full opacity-100"
+        >
+          <h2 className="text-2xl sm:text-5xl font-bold">
+            ¡Actúa para cambiar el mundo!
+          </h2>
+          <br />
+          <p className="text-center">
+            Fomentamos el vínculo entre empresas y organizaciones civiles para
+            generar un impacto positivo en la sociedad.
+          </p>
+          <p className="text-center">
+            Descubri diferentes maneras de involucrar tu organización con la
+            sociedad.
+          </p>
+        </div>
+      </div>
+    </div>
       <Modal />
     </>
   );
